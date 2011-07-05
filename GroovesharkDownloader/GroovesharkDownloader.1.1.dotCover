@@ -1,0 +1,15 @@
+<Configuration>
+  <SnapshotDialog>
+    <InitialDirectory>C:\Users\Skomski\documents\visual studio 2010\Projects\GroovesharkDownloader</InitialDirectory>
+  </SnapshotDialog>
+  <CoverageFilters>
+    <AllowFilters>
+      <Filter>
+        <ClassFilter>*</ClassFilter>
+        <FunctionFilter>*</FunctionFilter>
+        <ModuleFilter>*</ModuleFilter>
+      </Filter>
+    </AllowFilters>
+    <DenyFilters />
+  </CoverageFilters>
+</Configuration>
