@@ -19,7 +19,7 @@ namespace GroovesharkDownloader
         private static readonly AudioPlayer _instance = new AudioPlayer();
         private readonly List<CancellationTokenSource> _cancelTokens;
         private readonly Thread _fillBuffer;
-        private readonly string _mainCacheDirectory = Path.Combine(Path.GetTempPath(), "Grooveshark");
+        public readonly string MainCacheDirectory = Path.Combine(Path.GetTempPath(), "Grooveshark");
 
         private readonly BASS_FILEPROCS _streamCallbacks;
         private readonly BASSTimer _updateTimer;
@@ -65,7 +65,7 @@ namespace GroovesharkDownloader
             _fillBuffer = new Thread(FillPlayBuffer) {IsBackground = true};
             _fillBuffer.Start();
 
-            Directory.CreateDirectory(_mainCacheDirectory);
+            Directory.CreateDirectory(MainCacheDirectory);
 
             Songs = new List<Song>();
             _cancelTokens = new List<CancellationTokenSource>();
@@ -98,10 +98,14 @@ namespace GroovesharkDownloader
                 Bass.BASS_StreamFree(_audioStream);
                 _audioStream = 0;
             }
-            if(_audioBuffer != null)
+            if (_audioBuffer != null)
+            {
                 _audioBuffer.Close();
+                _audioBuffer.Dispose();
+                _audioBuffer = null;
+            }
 
-            _audioBuffer = Stream.Synchronized(new MemoryStream());
+            _audioBuffer = new MemoryStream();
 
             _lastPositionInBuffer = 0;
             _lastPositionMultiplier = 0;
@@ -129,17 +133,19 @@ namespace GroovesharkDownloader
             else
             {
                 _isNetworkStream = true;
-                AudioStreamInfo audioStreamInfo = Client.Instance.GetAudioStreamInformation(tuple.Item1);
+
+                var audioStreamInfo = Client.Instance.GetAudioStreamInformation(tuple.Item1);
+
                 _currentStreamIdentifier = (_currentSongID + audioStreamInfo.StreamKey);
                 _currentSecondsStreamLength = Convert.ToInt64(audioStreamInfo.uSecs)/1000000;
-                Debug.WriteLine(_currentSecondsStreamLength);
+
                 var cancelToken = new CancellationTokenSource();
                 _cancelTokens.Add(cancelToken);
-                Stream audioStream = Client.Instance.GetAudioStream(audioStreamInfo, cancelToken.Token);
+                var audioStream = Client.Instance.GetAudioStream(audioStreamInfo, cancelToken.Token);
 
                 if (audioStream != null)
                 {
-                    FileStream fileStream = File.Create(tuple.Item2);
+                    var fileStream = File.Create(tuple.Item2);
                     audioStream.CopyTo(fileStream);
                     fileStream.Close();
 
@@ -154,14 +160,13 @@ namespace GroovesharkDownloader
             {
                 if (_audioBuffer == null || _isNetworkStream == false)
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(1000);
                     continue;
                 }
 
                 if (_audioStream == 0 && _audioBuffer.Length > 32768)
                 {
                     SetupNetworkStream();
-                    continue;
                 }
 
                 if (_audioStream != 0 && _lastPositionInBuffer < _currentStreamLength &&
@@ -169,9 +174,12 @@ namespace GroovesharkDownloader
                 {
                     var newData = new byte[16384];
 
-                    _audioBuffer.Position = _lastPositionInBuffer;
-                    _audioBuffer.Read(newData, 0, 16384);
 
+                    _audioBuffer.Position = _lastPositionInBuffer;
+                    lock (_audioBuffer)
+                    {
+                        _audioBuffer.Read(newData, 0, 16384);
+                    }
                     int bytesRead = Bass.BASS_StreamPutFileData(_audioStream, newData, 16384);
 
 
@@ -183,7 +191,7 @@ namespace GroovesharkDownloader
                     Bass.BASS_StreamGetFilePosition(_audioStream, BASSStreamFilePosition.BASS_FILEPOS_BUFFER) == 0)
                     IsPlaying = false;
 
-                Thread.Sleep(250);
+                Thread.Sleep(300);
             }
         }
 
@@ -192,6 +200,7 @@ namespace GroovesharkDownloader
             _lastPositionInBuffer = 4096*_lastPositionMultiplier;
 
             _lastPositionMultiplier++;
+
 
             _audioStream = Bass.BASS_StreamCreateFileUser(BASSStreamSystem.STREAMFILE_BUFFERPUSH, BASSFlag.BASS_SAMPLE_FLOAT, _streamCallbacks, IntPtr.Zero);
 
@@ -264,8 +273,13 @@ namespace GroovesharkDownloader
                 e.Identifier != _currentStreamIdentifier) return;
 
             _currentStreamLength = e.Length;
-            _audioBuffer.Position = _audioBuffer.Length;
-            _audioBuffer.Write(e.Data, 0, e.Data.Length);
+
+            lock (_audioBuffer)
+            {
+                _audioBuffer.Position = _audioBuffer.Length;
+                _audioBuffer.Write(e.Data, 0, e.Data.Length);
+            }
+
         }
 
         public void PlaySong(Song song)
@@ -283,7 +297,7 @@ namespace GroovesharkDownloader
             }
 
             _currentSongID = song.SongID;
-            _currentSongPath = Path.Combine(_mainCacheDirectory, _currentSongID);
+            _currentSongPath = Path.Combine(MainCacheDirectory, _currentSongID+".mp3");
 
             if(Songs.Count > 0)
             _previousSong = Songs[0];
@@ -371,8 +385,13 @@ namespace GroovesharkDownloader
         {
             var data = new byte[length];
 
-            _audioBuffer.Position = _lastPositionInBuffer;
-            var bytesread = _audioBuffer.Read(data, 0, length);
+            int bytesread;
+            lock (_audioBuffer)
+            {
+                _audioBuffer.Position = _lastPositionInBuffer;
+                bytesread = _audioBuffer.Read(data, 0, length);
+            }
+
 
             _lastPositionInBuffer += bytesread;
 

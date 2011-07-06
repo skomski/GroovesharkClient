@@ -34,6 +34,7 @@
             this.PlayerTabPage = new System.Windows.Forms.TabPage();
             this.PlaylistTab = new System.Windows.Forms.TabPage();
             this.SearchTab = new System.Windows.Forms.TabPage();
+            this.PopularTabPage = new System.Windows.Forms.TabPage();
             this.SettingsTabPage = new System.Windows.Forms.TabPage();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -49,18 +50,23 @@
             this.AlbumLabel = new System.Windows.Forms.Label();
             this.ArtistLabel = new System.Windows.Forms.Label();
             this.VolumeTrackBar = new System.Windows.Forms.TrackBar();
+            this.CacheTabPage = new System.Windows.Forms.TabPage();
             this.playerControl = new GroovesharkDownloader.Controls.QueueControl();
             this.playlistControl = new GroovesharkDownloader.UserPlaylistControl();
+            this.popularControl = new GroovesharkDownloader.Controls.PopularControl();
             this.searchControl = new GroovesharkDownloader.SearchControl();
             this.settings = new GroovesharkDownloader.Controls.SettingsControl();
+            this.cacheControl = new GroovesharkDownloader.Controls.CacheControl();
             this.MainTabControl.SuspendLayout();
             this.PlayerTabPage.SuspendLayout();
             this.PlaylistTab.SuspendLayout();
             this.SearchTab.SuspendLayout();
+            this.PopularTabPage.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeekBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).BeginInit();
+            this.CacheTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // InitWorker
@@ -75,7 +81,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.MainTabControl.Controls.Add(this.PlayerTabPage);
             this.MainTabControl.Controls.Add(this.PlaylistTab);
+            this.MainTabControl.Controls.Add(this.PopularTabPage);
             this.MainTabControl.Controls.Add(this.SearchTab);
+            this.MainTabControl.Controls.Add(this.CacheTabPage);
             this.MainTabControl.Controls.Add(this.SettingsTabPage);
             this.MainTabControl.Location = new System.Drawing.Point(7, 6);
             this.MainTabControl.Name = "MainTabControl";
@@ -100,7 +108,7 @@
             this.PlaylistTab.Location = new System.Drawing.Point(4, 22);
             this.PlaylistTab.Name = "PlaylistTab";
             this.PlaylistTab.Padding = new System.Windows.Forms.Padding(3);
-            this.PlaylistTab.Size = new System.Drawing.Size(618, 241);
+            this.PlaylistTab.Size = new System.Drawing.Size(699, 241);
             this.PlaylistTab.TabIndex = 0;
             this.PlaylistTab.Text = "Playlists";
             this.PlaylistTab.UseVisualStyleBackColor = true;
@@ -111,10 +119,21 @@
             this.SearchTab.Location = new System.Drawing.Point(4, 22);
             this.SearchTab.Name = "SearchTab";
             this.SearchTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SearchTab.Size = new System.Drawing.Size(618, 241);
+            this.SearchTab.Size = new System.Drawing.Size(699, 241);
             this.SearchTab.TabIndex = 3;
             this.SearchTab.Text = "Search";
             this.SearchTab.UseVisualStyleBackColor = true;
+            // 
+            // PopularTabPage
+            // 
+            this.PopularTabPage.Controls.Add(this.popularControl);
+            this.PopularTabPage.Location = new System.Drawing.Point(4, 22);
+            this.PopularTabPage.Name = "PopularTabPage";
+            this.PopularTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.PopularTabPage.Size = new System.Drawing.Size(699, 241);
+            this.PopularTabPage.TabIndex = 6;
+            this.PopularTabPage.Text = "Popular";
+            this.PopularTabPage.UseVisualStyleBackColor = true;
             // 
             // SettingsTabPage
             // 
@@ -122,7 +141,7 @@
             this.SettingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.SettingsTabPage.Name = "SettingsTabPage";
             this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.SettingsTabPage.Size = new System.Drawing.Size(618, 241);
+            this.SettingsTabPage.Size = new System.Drawing.Size(699, 241);
             this.SettingsTabPage.TabIndex = 5;
             this.SettingsTabPage.Text = "Settings";
             this.SettingsTabPage.UseVisualStyleBackColor = true;
@@ -281,6 +300,17 @@
             this.VolumeTrackBar.TickFrequency = 1000;
             this.VolumeTrackBar.Scroll += new System.EventHandler(this.VolumeTrackBarScroll);
             // 
+            // CacheTabPage
+            // 
+            this.CacheTabPage.Controls.Add(this.cacheControl);
+            this.CacheTabPage.Location = new System.Drawing.Point(4, 22);
+            this.CacheTabPage.Name = "CacheTabPage";
+            this.CacheTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.CacheTabPage.Size = new System.Drawing.Size(699, 241);
+            this.CacheTabPage.TabIndex = 7;
+            this.CacheTabPage.Text = "Cache";
+            this.CacheTabPage.UseVisualStyleBackColor = true;
+            // 
             // playerControl
             // 
             this.playerControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -294,8 +324,16 @@
             this.playlistControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playlistControl.Location = new System.Drawing.Point(3, 3);
             this.playlistControl.Name = "playlistControl";
-            this.playlistControl.Size = new System.Drawing.Size(612, 235);
+            this.playlistControl.Size = new System.Drawing.Size(693, 235);
             this.playlistControl.TabIndex = 0;
+            // 
+            // popularControl
+            // 
+            this.popularControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.popularControl.Location = new System.Drawing.Point(3, 3);
+            this.popularControl.Name = "popularControl";
+            this.popularControl.Size = new System.Drawing.Size(693, 235);
+            this.popularControl.TabIndex = 0;
             // 
             // searchControl
             // 
@@ -303,7 +341,7 @@
             this.searchControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchControl.Location = new System.Drawing.Point(3, 3);
             this.searchControl.Name = "searchControl";
-            this.searchControl.Size = new System.Drawing.Size(612, 235);
+            this.searchControl.Size = new System.Drawing.Size(693, 235);
             this.searchControl.TabIndex = 0;
             // 
             // settings
@@ -311,8 +349,16 @@
             this.settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settings.Location = new System.Drawing.Point(3, 3);
             this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(612, 235);
+            this.settings.Size = new System.Drawing.Size(693, 235);
             this.settings.TabIndex = 0;
+            // 
+            // cacheControl
+            // 
+            this.cacheControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cacheControl.Location = new System.Drawing.Point(3, 3);
+            this.cacheControl.Name = "cacheControl";
+            this.cacheControl.Size = new System.Drawing.Size(693, 235);
+            this.cacheControl.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -339,11 +385,13 @@
             this.PlayerTabPage.ResumeLayout(false);
             this.PlaylistTab.ResumeLayout(false);
             this.SearchTab.ResumeLayout(false);
+            this.PopularTabPage.ResumeLayout(false);
             this.SettingsTabPage.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeekBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).EndInit();
+            this.CacheTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,6 +423,10 @@
         private System.Windows.Forms.Label AlbumLabel;
         private System.Windows.Forms.Label ArtistLabel;
         private System.Windows.Forms.TrackBar VolumeTrackBar;
+        private System.Windows.Forms.TabPage PopularTabPage;
+        private Controls.PopularControl popularControl;
+        private System.Windows.Forms.TabPage CacheTabPage;
+        private Controls.CacheControl cacheControl;
     }
 }
 

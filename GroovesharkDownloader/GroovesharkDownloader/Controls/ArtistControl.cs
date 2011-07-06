@@ -39,5 +39,13 @@ namespace GroovesharkDownloader
         {
             songsControl.Fill(e.Result as Song[]);
         }
+
+        private void CloseButtonClick(object sender, EventArgs e)
+        {
+            var tabControl = Parent.Parent as TabControl;
+
+            if (tabControl != null)
+                tabControl.TabPages.Remove(tabControl.SelectedTab);
+        }
     }
 }

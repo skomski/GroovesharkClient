@@ -31,6 +31,7 @@
             this.PlayListIDLabel = new System.Windows.Forms.Label();
             this.PlayListName = new System.Windows.Forms.Label();
             this.songsControl = new GroovesharkDownloader.Controls.SongsControl();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PlayListIDLabel
@@ -58,19 +59,31 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.songsControl.Location = new System.Drawing.Point(0, 26);
             this.songsControl.Name = "songsControl";
-            this.songsControl.Size = new System.Drawing.Size(365, 258);
+            this.songsControl.Size = new System.Drawing.Size(369, 258);
             this.songsControl.TabIndex = 3;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Location = new System.Drawing.Point(301, 3);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(65, 20);
+            this.CloseButton.TabIndex = 4;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButtonClick);
             // 
             // PlaylistControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.songsControl);
             this.Controls.Add(this.PlayListName);
             this.Controls.Add(this.PlayListIDLabel);
             this.Name = "PlaylistControl";
-            this.Size = new System.Drawing.Size(365, 284);
+            this.Size = new System.Drawing.Size(369, 284);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +94,7 @@
         private System.Windows.Forms.Label PlayListIDLabel;
         private System.Windows.Forms.Label PlayListName;
         private SongsControl songsControl;
+        private System.Windows.Forms.Button CloseButton;
 
     }
 }

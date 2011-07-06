@@ -21,19 +21,29 @@ namespace GroovesharkDownloader.Controls
 
             _album = album;
 
-            NameLabel.Text = _album.AlbumName;
+            NameLabel.Text = _album.Name;
+
+            AlbumPictureBox.ImageLocation = GroovesharkAPI.Client.CoverURLSmall + _album.CoverArtFilename;
 
             backgroundWorker.RunWorkerAsync();
         }
 
         private void BackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = GroovesharkAPI.Client.Instance.GetAlbumSongs(_album.AlbumID, true);
+            e.Result = GroovesharkAPI.Client.Instance.GetAlbumSongs(_album.AlbumID, true).Concat(GroovesharkAPI.Client.Instance.GetAlbumSongs(_album.AlbumID, false)).ToArray();
         }
 
         private void BackgroundWorkerRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             songsControl.Fill(e.Result as Song[]);
+        }
+
+        private void CloseButtonClick(object sender, EventArgs e)
+        {
+            var tabControl = Parent.Parent as TabControl;
+
+            if (tabControl != null)
+                tabControl.TabPages.Remove(tabControl.SelectedTab);
         }
     }
 }

@@ -16,25 +16,18 @@ namespace GroovesharkDownloader
 
 		public MainWindow()
 		{
+            BassNet.Registration("skomski@skomski.com", "2X28202919282022");
+            Bass.BASS_Init(-1, 44100, BASSInit.BASS_DEVICE_DEFAULT, Handle);
+
 			InitializeComponent();
 			InitWorker.RunWorkerAsync();
-		}
-
-		protected override void OnLoad(EventArgs e)
-		{
-			base.OnLoad(e);
-
-			BassNet.Registration("skomski@skomski.com", "2X28202919282022");
-			Bass.BASS_Init(-1, 44100, BASSInit.BASS_DEVICE_DEFAULT, Handle);
-
-			Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_NET_BUFFER, 10000);
-
 		}
 
 		protected override void OnClosed(EventArgs e)
 		{
 			base.OnLoad(e);
 
+		    Bass.BASS_Stop();
 			Bass.BASS_Free();
 		}
 

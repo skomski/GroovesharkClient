@@ -66,11 +66,23 @@
     <Compile Include="Controls\ArtistControl.Designer.cs">
       <DependentUpon>ArtistControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CacheControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CacheControl.Designer.cs">
+      <DependentUpon>CacheControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PlaylistControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\PlaylistControl.Designer.cs">
       <DependentUpon>PlaylistControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PopularControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PopularControl.Designer.cs">
+      <DependentUpon>PopularControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\QueueControl.cs">
       <SubType>UserControl</SubType>
@@ -120,8 +132,14 @@
     <EmbeddedResource Include="Controls\ArtistControl.resx">
       <DependentUpon>ArtistControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CacheControl.resx">
+      <DependentUpon>CacheControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PlaylistControl.resx">
       <DependentUpon>PlaylistControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PopularControl.resx">
+      <DependentUpon>PopularControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\SettingsControl.resx">
       <DependentUpon>SettingsControl.cs</DependentUpon>

@@ -23,16 +23,20 @@ namespace GroovesharkAPI
 
 		public string SessionID { get; private set; }
 		public string Token { get; private set; }
-		public string ClientIdentifier { get; private set; }
-		public string ClientRevision { get; private set; }
+		public const string ClientIdentifier = "htmlshark";
+		public const string ClientRevision = "20101222.59";
 		public Country Country { get; private set; }
 		public string UUID { get; private set; }
 		public string SecretKey { get; private set; }
 
-	    public bool IsConnected { get; private set; }
-	    public bool IsLoggedIn { get; private set; }
+		public bool IsConnected { get; private set; }
+		public bool IsLoggedIn { get; private set; }
 
-        public int userID { get; private set; }
+		public int UserID { get; private set; }
+
+		public const string CoverURLSmall = "http://beta.grooveshark.com/static/amazonart/s";
+		public const string CoverURLMedium = "http://beta.grooveshark.com/static/amazonart/m";
+		public const string CoverURLLarge = "http://beta.grooveshark.com/static/amazonart/l";
 
 		public event EventHandler<API.APICallProgressChangedEvent> ProgressEvent;
 		public event EventHandler<API.APICallCompletedEvent> CompletedEvent;
@@ -48,8 +52,6 @@ namespace GroovesharkAPI
 		}
 		private Client()
 		{
-			ClientIdentifier = "htmlshark";
-			ClientRevision = "20101222.59";
 			UUID = null;
 			Token = null;
 			SessionID = null;
@@ -65,9 +67,9 @@ namespace GroovesharkAPI
 			}
 		}
 
-	    public List<Task> Tasks = new List<Task>();
+		public List<Task> Tasks = new List<Task>();
 
-	    public void Connect()
+		public void Connect()
 		{
 			if (IsConnected)
 				return;
@@ -84,306 +86,297 @@ namespace GroovesharkAPI
 		private string GetSessionID()
 		{
 			var apiCall = new initiateSession(this);
-			apiCall.Call();
-			return apiCall.DeserializedResponse.result;
+			var response = apiCall.Call();
+			return response;
 		}
 
 		private string GetCommunicationToken(string secretKey)
 		{
-			var apiCall = new getCommunicationToken(this);
-			try
-			{
-				apiCall.DeserializedRequest.parameters.secretKey = secretKey;
-				apiCall.Call();
-
-				return apiCall.DeserializedResponse.result;
-			}
-			catch
-			{
-				return null;
-			}
+			var apiCall = new getCommunicationToken(secretKey,this);
+			var response = apiCall.Call();
+			return response;
+			
 		}
 
 		private Country GetCountry()
 		{
 			var apiCall = new getCountry(this);
-			try
-			{
-				apiCall.Call();
-				return apiCall.DeserializedResponse.result;
-			}
-			catch
-			{
-				return null;
-			}
+			var response = apiCall.Call();
+			return response;
 		}
 
 		#endregion 
 
 		#region Wrappers
 
-        public AudioStreamInfo GetAudioStreamInformation(string songID)
+		public AudioStreamInfo GetAudioStreamInformation(string songID)
 		{
 			if (IsConnected == false)
 				Connect();
 
-                var apiCall = new getStreamKeyFromSongIDEx(this);
+			try
+			{
+				var apiCall = new getStreamKeyFromSongIDEx(songID,false,false,Country,this);
 
-                apiCall.DeserializedRequest.parameters.songID = Convert.ToInt32(songID);
-				apiCall.DeserializedRequest.parameters.prefetch = false;
-                apiCall.DeserializedRequest.parameters.mobile = false;
-                apiCall.DeserializedRequest.parameters.country = Country;
+				apiCall.ProgressEvent += ProgressEvent;
 
-                apiCall.ProgressEvent += ProgressEvent;
+				var response = apiCall.Call();
 
-                apiCall.Call();
+				return new AudioStreamInfo
+				{
+					Server = response.ip,
+					StreamKey = response.streamKey,
+					uSecs = response.uSecs,
+					SongID = songID
+				};
+			}
+			catch(GroovesharkException exception)
+			{
+				if (exception.FaultErrorCode == FaultCode.InvalidToken)
+				{ 
+					IsConnected = false;
+					return GetAudioStreamInformation(songID);
+				}
 
-                return new AudioStreamInfo { Server = apiCall.DeserializedResponse.result.ip, StreamKey = apiCall.DeserializedResponse.result.streamKey,uSecs = apiCall.DeserializedResponse.result.uSecs,SongID = songID};
+			}
+
+			return null;
 		}
 
-        public Stream GetAudioStream(AudioStreamInfo streamInfo,CancellationToken cancelToken)
-        {
-            if (IsConnected == false)
-                Connect();
+		public Stream GetAudioStream(AudioStreamInfo streamInfo,CancellationToken cancelToken)
+		{
+			if (IsConnected == false)
+				Connect();
 
-            var audioCall = new getAudioStreamFromStreamKey(streamInfo.Server, streamInfo.StreamKey, streamInfo.SongID + streamInfo.StreamKey, this);
+			var audioCall = new getAudioStreamFromStreamKey(streamInfo.Server, streamInfo.StreamKey, streamInfo.SongID + streamInfo.StreamKey, this);
 
-            audioCall.ProgressEvent += ProgressEvent;
-            audioCall.ReceivedDataEvent += ReceivedEvent;
-            audioCall.CompletedEvent += CompletedEvent;
+			audioCall.ProgressEvent += ProgressEvent;
+			audioCall.ReceivedDataEvent += ReceivedEvent;
+			audioCall.CompletedEvent += CompletedEvent;
 
-            audioCall.Call(cancelToken);
+			var response = audioCall.Call(cancelToken);
 
-            return !cancelToken.IsCancellationRequested ? audioCall.DeserializedResponse.result : null;
-        }
+			return !cancelToken.IsCancellationRequested ? response : null;
+		}
 
 		public StringCollection GetAutoComplete(string search)
 		{
 			if (IsConnected == false)
 				Connect();
 
-			var call = new getArtistAutocomplete(this);
+			var apiCall = new getArtistAutocomplete(search,this);
 
-			try
-			{
-				call.DeserializedRequest.parameters.query = search;
-				call.Call();
+			var response = apiCall.Call();
 
-				var searchList = new StringCollection();
-				foreach (ArtistAutocomplete artist in call.DeserializedResponse.result.artists)
-				{
-					searchList.Add(artist.Name);
-				}
-				return searchList;
-			}
-			catch
+			var searchList = new StringCollection();
+			foreach (var artist in response.artists)
 			{
-				return null;
+				searchList.Add(artist.Name);
 			}
+			return searchList;
 		}
 
-		public TType[] Search<TType>(string query)where TType : class,ISearch
+		public TType[] Search<TType>(string query)where TType : class, ISearch
 		{
 			if(IsConnected == false)
 				Connect();
 
-			var apiCall = new getSearchResultsEx<TType>(this);
+			string type;
 
-			apiCall.DeserializedRequest.parameters.query = query;
+			if (typeof(TType) == typeof(Playlist) || typeof(TType) == typeof(SearchPlaylist))
+				type = "Playlists";
+			else if (typeof(TType) == typeof(Album))
+				type = "Albums";
+			else if (typeof(TType) == typeof(SearchUser))
+				type = "Users";
+			else if (typeof(TType) == typeof(SearchSong))
+				type = "Songs";
+			else if (typeof(TType) == typeof(Artist))
+				type = "Artists";
+			else
+			{
+				throw new ArgumentOutOfRangeException("TType");
+			}
 
-            if (typeof(TType) == typeof(Playlist) || typeof(TType) == typeof(SearchPlaylist))
-				apiCall.DeserializedRequest.parameters.type = "Playlists";
-
-			if (typeof(TType) == typeof(Album))
-				apiCall.DeserializedRequest.parameters.type = "Albums";
-
-			if (typeof(TType) == typeof(SearchUser))
-				apiCall.DeserializedRequest.parameters.type = "Users";
-
-			if (typeof(TType) == typeof(SearchSong))
-				apiCall.DeserializedRequest.parameters.type = "Songs";
-
-			if (typeof(TType) == typeof(Artist))
-				apiCall.DeserializedRequest.parameters.type = "Artists";
-
-			apiCall.DeserializedRequest.parameters.ppOverride = false;
-			apiCall.DeserializedRequest.parameters.guts = 0;
+			var apiCall = new getSearchResultsEx<TType>(query, type, false, 0, this);
 
 			apiCall.ProgressEvent += ProgressEvent;
 			apiCall.CompletedEvent += CompletedEvent;
 
-			apiCall.Call();
+			 var response = apiCall.Call();
 
-			return apiCall.DeserializedResponse.result.result;
+			return response.result;
 		}
 
-        public TType[] GetFavorites<TType>() where TType : class,IFavorite
-        {
-            if (IsConnected == false)
-                Connect();
-
-            if (!IsLoggedIn) throw new GroovesharkException(FaultCode.MustBeLoggedIn);
-
-            var apiCall = new getFavorites<TType>(this);
-
-            if (typeof(TType) == typeof(Playlist))
-                apiCall.DeserializedRequest.parameters.ofWhat = "Playlists";
-
-            if (typeof(TType) == typeof(FavoriteSong))
-                apiCall.DeserializedRequest.parameters.ofWhat = "Songs";
-
-            if (typeof(TType) == typeof(User))
-                apiCall.DeserializedRequest.parameters.ofWhat = "Users";
-
-
-            apiCall.DeserializedRequest.parameters.userID = userID;
-
-            apiCall.ProgressEvent += ProgressEvent;
-            apiCall.CompletedEvent += CompletedEvent;
-
-            apiCall.Call();
-
-            return apiCall.DeserializedResponse.result;
-        }
-
-		public PopularSong[] GetPopularSongs(string type)
+		public TType[] GetFavorites<TType>() where TType : class,IFavorite
 		{
 			if (IsConnected == false)
 				Connect();
 
-			var call = new popularGetSongs(this);
+			if (!IsLoggedIn) throw new GroovesharkException(FaultCode.MustBeLoggedIn);
 
-			try
-			{
-				call.DeserializedRequest.parameters.type = type;
+			var apiCall = new getFavorites<TType>(this);
 
-				call.Call();
+			if (typeof(TType) == typeof(Playlist))
+				apiCall.DeserializedRequest.parameters.ofWhat = "Playlists";
 
-				return call.DeserializedResponse.result.songs;
-			}
-			catch
-			{
-				return null;
-			}
+			if (typeof(TType) == typeof(FavoriteSong))
+				apiCall.DeserializedRequest.parameters.ofWhat = "Songs";
+
+			if (typeof(TType) == typeof(User))
+				apiCall.DeserializedRequest.parameters.ofWhat = "Users";
+
+
+			apiCall.DeserializedRequest.parameters.userID = UserID;
+
+			apiCall.ProgressEvent += ProgressEvent;
+			apiCall.CompletedEvent += CompletedEvent;
+
+			 var response = apiCall.Call();
+
+			return response;
+		}
+
+		public PopularSong[] GetPopularSongs(PopularType type)
+		{
+			if (IsConnected == false)
+				Connect();
+
+			var apiCall = new popularGetSongs(this);
+
+			apiCall.DeserializedRequest.parameters.type = type == PopularType.Daily ? "daily" : "monthly";
+
+			var response = apiCall.Call();
+
+			return response.songs;
 		}
 
 		public bool AuthenticateUser(string username,string password)
 		{
 			if(IsConnected == false)
-                Connect();
+				Connect();
 
-		    var apiCall = new authenticateUser(username,password,0,this);
+			var apiCall = new authenticateUser(username,password,0,this);
 
-            apiCall.Call();
+			var response = apiCall.Call();
 
-            IsLoggedIn = apiCall.DeserializedResponse.result.userID > 0;
-		    userID = apiCall.DeserializedResponse.result.userID;
-            return IsLoggedIn;
+			IsLoggedIn = response.userID > 0;
+			UserID = response.userID;
+			return IsLoggedIn;
 		}
 
-        public PlaylistUserSong[] GetPlaylistSongs(string playlistID)
-        {
-            if (IsConnected == false)
-                Connect();
+		public PlaylistUserSong[] GetPlaylistSongs(string playlistID)
+		{
+			if (IsConnected == false)
+				Connect();
 
-            var apiCall = new playlistGetSongs(this);
+			var apiCall = new playlistGetSongs(this);
 
-            apiCall.DeserializedRequest.parameters.playlistID = Convert.ToInt32(playlistID);
+			apiCall.DeserializedRequest.parameters.playlistID = Convert.ToInt32(playlistID);
 
-            apiCall.Call();
+			var response = apiCall.Call();
+			return response.Songs;
+		}
 
-            return apiCall.DeserializedResponse.result.Songs;
-        }
+		public ArtistSong[] GetArtistSongs(string artistID,bool verifiedOrPopular)
+		{
+			if (IsConnected == false)
+				Connect();
 
-        public ArtistSong[] GetArtistSongs(string artistID,bool verifiedOrPopular)
-        {
-            if (IsConnected == false)
-                Connect();
+			var apiCall = new artistGetSongsEx(this);
 
-            var apiCall = new artistGetSongsEx(this);
+			apiCall.DeserializedRequest.parameters.artistID = artistID;
+			apiCall.DeserializedRequest.parameters.isVerifiedOrPopular = verifiedOrPopular;
 
-            apiCall.DeserializedRequest.parameters.artistID = artistID;
-            apiCall.DeserializedRequest.parameters.isVerifiedOrPopular = verifiedOrPopular;
+			var response = apiCall.Call();
+			return response;
+		}
 
-            apiCall.Call();
+		public AlbumSong[] GetAlbumSongs(string albumID,bool isVerified)
+		{
+			if (IsConnected == false)
+				Connect();
 
-            return apiCall.DeserializedResponse.result;
-        }
+			var apiCall = new albumGetSongs(this);
 
-        public AlbumSong[] GetAlbumSongs(string albumID,bool isVerified)
-        {
-            if (IsConnected == false)
-                Connect();
+			apiCall.DeserializedRequest.parameters.albumID = albumID;
+			apiCall.DeserializedRequest.parameters.isVerified = isVerified;
+			apiCall.DeserializedRequest.parameters.offset = 0;
 
-            var apiCall = new albumGetSongs(this);
+			var response = apiCall.Call();
+			return response.songs;
+		}
 
-            apiCall.DeserializedRequest.parameters.albumID = albumID;
-            apiCall.DeserializedRequest.parameters.isVerified = isVerified;
-            apiCall.DeserializedRequest.parameters.offset = 0;
+		public PlaylistFromUser[] GetUserPlaylists(int userIdentifier)
+		{
+			if (IsConnected == false)
+				Connect();
 
-            apiCall.Call();
+			if (!IsLoggedIn) throw new GroovesharkException(FaultCode.MustBeLoggedIn);
 
-            return apiCall.DeserializedResponse.result.songs;
-        }
+			var apiCall = new userGetPlaylists(this);
 
-        public PlaylistFromUser[] GetUserPlaylists(int userIdentifier)
-        {
-            if (IsConnected == false)
-                Connect();
+			apiCall.DeserializedRequest.parameters.userID = userIdentifier;
 
-            var apiCall = new userGetPlaylists(this);
+			var response = apiCall.Call();
+			return response.Playlists;
+		}
 
-            apiCall.DeserializedRequest.parameters.userID = userIdentifier;
-
-            apiCall.Call();
-
-            return apiCall.DeserializedResponse.result.Playlists;
-        }
-
-        public Artist GetArtistByID(string identifier)
-        {
-            if (IsConnected == false)
-                Connect();
+		public Artist GetArtistByID(string identifier)
+		{
+			if (IsConnected == false)
+				Connect();
 
 
-            var apiCall = new getArtistByID(this);
+			var apiCall = new getArtistByID(this);
 
-            apiCall.DeserializedRequest.parameters.artistID = Convert.ToInt32(identifier);
+			apiCall.DeserializedRequest.parameters.artistID = Convert.ToInt32(identifier);
 
-            apiCall.Call();
+			var response = apiCall.Call();
+			return response;
+		}
 
-            return apiCall.DeserializedResponse.result;
-        }
-
-        public Album GetAlbumByID(string identifier)
-        {
-            if (IsConnected == false)
-                Connect();
-
-
-            var apiCall = new getAlbumByID(this);
-
-            apiCall.DeserializedRequest.parameters.albumID = Convert.ToInt32(identifier);
-
-            apiCall.Call();
-
-            return apiCall.DeserializedResponse.result;
-        }
-
-        public PlaylistByID GetPlaylistByID(string identifier)
-        {
-            if (IsConnected == false)
-                Connect();
+		public Album GetAlbumByID(string identifier)
+		{
+			if (IsConnected == false)
+				Connect();
 
 
-            var apiCall = new getPlaylistByID(this);
+			var apiCall = new getAlbumByID(this);
 
-            apiCall.DeserializedRequest.parameters.playlistID = Convert.ToInt32(identifier);
+			apiCall.DeserializedRequest.parameters.albumID = Convert.ToInt32(identifier);
 
-            apiCall.Call();
+			var response = apiCall.Call();
+			return response;
+		}
 
-            return apiCall.DeserializedResponse.result;
-        }
+		public PlaylistByID GetPlaylistByID(string identifier)
+		{
+			if (IsConnected == false)
+				Connect();
+
+
+			var apiCall = new getPlaylistByID(this);
+
+			apiCall.DeserializedRequest.parameters.playlistID = Convert.ToInt32(identifier);
+
+			var response = apiCall.Call();
+			return response;
+		}
+
+		public Song GetSongByID(string identifier)
+		{
+			if (IsConnected == false)
+				Connect();
+
+
+			var getTokenForSong = new getTokenForSong(identifier, Country, this);
+			var response = getTokenForSong.Call();
+			var getSongForToken = new getSongFromToken(response.Token, Country, this);
+			var song = getSongForToken.Call();
+
+			return song;
+		}
 
 
 	#endregion

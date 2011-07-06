@@ -101,7 +101,7 @@ namespace GroovesharkAPI
                 }
             }
 
-            public APIResponse<TResponse> DeserializedResponse { get; private set; }
+            private APIResponse<TResponse> _deserializedResponse;
             public APIRequest<TRequest> DeserializedRequest { get; set; }
 
             public event EventHandler<APICallProgressChangedEvent> ProgressEvent;
@@ -137,8 +137,8 @@ namespace GroovesharkAPI
 
             public APICall(Client client)
             {
-                ClientIdentifier = client.ClientIdentifier;
-                ClientRevision = client.ClientRevision;
+                ClientIdentifier = Client.ClientIdentifier;
+                ClientRevision = Client.ClientRevision;
                 SessionID = client.SessionID;
                 Token = client.Token;
                 UUID = client.UUID;
@@ -213,19 +213,26 @@ namespace GroovesharkAPI
 
                 while (!_currentCancelToken.IsCancellationRequested && !_requestComplete)
                 {
-                    Thread.Sleep(200);
+                    Thread.Sleep(100);
                 }
             }
 
-            public void Call(CancellationToken cancelToken = new CancellationToken())
+            public TResponse Call(CancellationToken cancelToken = new CancellationToken())
             {
 
                 _currentCancelToken = cancelToken;
                 var task = new Task(CallInternal,cancelToken);
-
                 task.Start();
 
                 task.Wait();
+
+                if (_deserializedResponse.fault != null)
+                    throw new GroovesharkException(_deserializedResponse.fault.code);
+
+                if(_deserializedResponse.result == null)
+                    throw new GroovesharkException(FaultCode.EmptyResult);
+
+                return _deserializedResponse.result;
             }
 
             private  void RespCallback(IAsyncResult asyncResult)
@@ -277,7 +284,7 @@ namespace GroovesharkAPI
                 }
 
                 reqState.call.OnRaiseCompletedEvent(new APICallCompletedEvent(reqState.call.GetName()));
-                DeserializedResponse = CreateResponse(_requestState.WebResponse, _requestState.finalStream);
+                _deserializedResponse = CreateResponse(_requestState.WebResponse, _requestState.finalStream);
 
                 _requestComplete = true;
             }
@@ -414,9 +421,13 @@ namespace GroovesharkAPI
                     return "getStreamKeyFromSongIDEx";
                 }
 
-                public getStreamKeyFromSongIDEx(Client client)
-                    : base(client)
+                public getStreamKeyFromSongIDEx(string songID, bool mobile, bool prefetch, Country country, Client client) : base(client)
                 {
+                    DeserializedRequest.parameters.songID = Convert.ToInt32(songID);
+                    DeserializedRequest.parameters.mobile = mobile;
+                    DeserializedRequest.parameters.prefetch = prefetch;
+                    DeserializedRequest.parameters.country = country;
+
                     DeserializedRequest.header.client = "widget";
                 }
             }
@@ -485,9 +496,12 @@ namespace GroovesharkAPI
                     return "getSearchResultsEx";
                 }
 
-                public getSearchResultsEx(Client client)
-                    : base(client)
+                public getSearchResultsEx(string query, string type, bool ppOverride, int guts, Client client) : base(client)
                 {
+                    DeserializedRequest.parameters.query = query;
+                    DeserializedRequest.parameters.type = type;
+                    DeserializedRequest.parameters.ppOverride = ppOverride;
+                    DeserializedRequest.parameters.guts = guts;
                 }
             }
 
@@ -508,9 +522,9 @@ namespace GroovesharkAPI
                     return "getArtistAutocomplete";
                 }
 
-                public getArtistAutocomplete(Client client)
-                    : base(client)
+                public getArtistAutocomplete(string search, Client client) : base(client)
                 {
+                    DeserializedRequest.parameters.query = search;
                 }
             }
 
@@ -597,9 +611,10 @@ namespace GroovesharkAPI
                 {
                     return "getCommunicationToken";
                 }
-                public getCommunicationToken(Client client)
-                    : base(client)
+
+                public getCommunicationToken(string secretKey, Client client) : base(client)
                 {
+                    DeserializedRequest.parameters.secretKey = secretKey;
                 }
             }
 
@@ -656,9 +671,11 @@ namespace GroovesharkAPI
                     return "getSongFromToken";
                 }
 
-                public getSongFromToken(Client client)
+                public getSongFromToken(string token,Country country,Client client)
                     : base(client)
                 {
+                    DeserializedRequest.parameters.token = token;
+                    DeserializedRequest.parameters.country = country;
                 }
             }
 
@@ -679,9 +696,11 @@ namespace GroovesharkAPI
                     return "getTokenForSong";
                 }
 
-                public getTokenForSong(Client client)
+                public getTokenForSong(string songID,Country country,Client client)
                     : base(client)
                 {
+                    DeserializedRequest.parameters.songID = songID;
+                    DeserializedRequest.parameters.country = Country;
                 }
             }
 

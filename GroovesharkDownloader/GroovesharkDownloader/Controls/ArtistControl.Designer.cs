@@ -28,25 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.songsControl = new GroovesharkDownloader.Controls.SongsControl();
             this.NameLabel = new System.Windows.Forms.Label();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.songsControl = new GroovesharkDownloader.Controls.SongsControl();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // songsControl
-            // 
-            this.songsControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.songsControl.Location = new System.Drawing.Point(0, 18);
-            this.songsControl.Name = "songsControl";
-            this.songsControl.Size = new System.Drawing.Size(508, 257);
-            this.songsControl.TabIndex = 0;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(26, 2);
+            this.NameLabel.Location = new System.Drawing.Point(17, 6);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(58, 13);
             this.NameLabel.TabIndex = 1;
@@ -57,14 +48,36 @@
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerDoWork);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorkerRunWorkerCompleted);
             // 
+            // songsControl
+            // 
+            this.songsControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.songsControl.Location = new System.Drawing.Point(0, 24);
+            this.songsControl.Name = "songsControl";
+            this.songsControl.Size = new System.Drawing.Size(511, 251);
+            this.songsControl.TabIndex = 0;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Location = new System.Drawing.Point(431, 2);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 20);
+            this.CloseButton.TabIndex = 2;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButtonClick);
+            // 
             // ArtistControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.songsControl);
             this.Name = "ArtistControl";
-            this.Size = new System.Drawing.Size(508, 275);
+            this.Size = new System.Drawing.Size(511, 275);
             this.Load += new System.EventHandler(this.ArtistLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -76,5 +89,6 @@
         private Controls.SongsControl songsControl;
         private System.Windows.Forms.Label NameLabel;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

@@ -24,5 +24,13 @@ namespace GroovesharkDownloader.Controls
 
             songsControl.Fill(GroovesharkAPI.Client.Instance.GetPlaylistSongs(playlist.PlaylistID.ToString()));
         }
+
+        private void CloseButtonClick(object sender, EventArgs e)
+        {
+            var tabControl = Parent.Parent as TabControl;
+
+            if (tabControl != null)
+                tabControl.TabPages.Remove(tabControl.SelectedTab);
+        }
     }
 }

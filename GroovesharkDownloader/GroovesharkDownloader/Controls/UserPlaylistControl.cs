@@ -35,7 +35,7 @@ namespace GroovesharkDownloader
 
         private void BackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = Client.Instance.GetFavorites<Playlist>().Concat(Array.ConvertAll(Client.Instance.GetUserPlaylists(Client.Instance.userID),prop => (Playlist)prop)).ToArray();
+            e.Result = Client.Instance.GetFavorites<Playlist>().Concat(Array.ConvertAll(Client.Instance.GetUserPlaylists(Client.Instance.UserID),prop => (Playlist)prop)).ToArray();
         }
 
         private void BackgroundWorkerRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

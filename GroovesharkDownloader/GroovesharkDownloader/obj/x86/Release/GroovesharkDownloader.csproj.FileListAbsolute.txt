@@ -36,3 +36,5 @@ C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86
 C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.SearchControl.resources
 C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GenerateResource.read.1.tlog
 C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.PopularControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.CacheControl.resources

@@ -5,9 +5,11 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GroovesharkAPI.Types;
 using GroovesharkAPI.Types.Albums;
+using GroovesharkAPI.Types.Artists;
 using GroovesharkAPI.Types.Songs;
 
 namespace GroovesharkDownloader.Controls
@@ -63,16 +65,33 @@ namespace GroovesharkDownloader.Controls
             AudioPlayer.Instance.RemoveSongFromQueue(_songs[SongsListView.SelectedIndices[0]]);
         }
 
-        private void OpenArtistTabToolStripMenuItemClick(object sender, EventArgs e)
+        private void GetArtistForTab(object obj)
         {
+            var song = obj as Song;
+
+            var artistID = song.ArtistID;
+
+            if (artistID == null)
+            {
+                var newSong = GroovesharkAPI.Client.Instance.GetSongByID(song.SongID);
+                artistID = newSong.ArtistID;
+            }
+
+            var artist = GroovesharkAPI.Client.Instance.GetArtistByID(artistID);
+
+
+            Invoke(new Action<Artist>(AddArtistTab), artist);
+        }
+
+        private void AddArtistTab(object obj)
+        {
+            var artist = obj as Artist;
+
             TabControl tabControl;
             if (Parent.Parent.GetType() == typeof(TabControl))
                 tabControl = Parent.Parent as TabControl;
             else
                 tabControl = Parent.Parent.Parent as TabControl;
-
-            var song = _songs[SongsListView.SelectedIndices[0]];
-            var artist = GroovesharkAPI.Client.Instance.GetArtistByID(song.ArtistID);
 
             if (tabControl != null)
             {
@@ -80,21 +99,39 @@ namespace GroovesharkDownloader.Controls
                 newPage.Controls.Add(new ArtistControl(artist) { Dock = DockStyle.Fill, BackColor = SystemColors.Control });
                 tabControl.TabPages.Add(newPage);
             }
+
         }
 
-        private void OpenAlbumTabToolStripMenuItemClick(object sender, EventArgs e)
+        private void OpenArtistTabToolStripMenuItemClick(object sender, EventArgs e)
         {
+            Task.Factory.StartNew(GetArtistForTab, _songs[SongsListView.SelectedIndices[0]]);
+        }
+
+        private void GetAlbumForTab(object obj)
+        {
+            var song = obj as Song;
+
+            var albumID = song.AlbumID;
+            if (albumID == null)
+            {
+                var newSong = GroovesharkAPI.Client.Instance.GetSongByID(song.SongID);
+                albumID = newSong.AlbumID;
+            }
+
+            var album = GroovesharkAPI.Client.Instance.GetAlbumByID(albumID);
+
+            Invoke(new Action<Album>(AddAlbumTab), album);
+        }
+
+        private void AddAlbumTab(object obj)
+        {
+            var album = obj as Album;
+
             TabControl tabControl;
-            if(Parent.Parent.GetType() == typeof(TabControl))
+            if (Parent.Parent.GetType() == typeof(TabControl))
                 tabControl = Parent.Parent as TabControl;
             else
                 tabControl = Parent.Parent.Parent as TabControl;
-
-
-            
-
-            var song = _songs[SongsListView.SelectedIndices[0]];
-            var album = GroovesharkAPI.Client.Instance.GetAlbumByID(song.AlbumID);
 
             if (tabControl != null)
             {
@@ -102,6 +139,12 @@ namespace GroovesharkDownloader.Controls
                 newPage.Controls.Add(new AlbumControl(album) { Dock = DockStyle.Fill, BackColor = SystemColors.Control });
                 tabControl.TabPages.Add(newPage);
             }
+        }
+
+        private void OpenAlbumTabToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            var task = new Task(GetAlbumForTab, _songs[SongsListView.SelectedIndices[0]]);
+            task.Start();
         }
     }
 }

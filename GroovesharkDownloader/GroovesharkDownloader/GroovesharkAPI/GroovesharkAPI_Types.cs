@@ -332,6 +332,12 @@ namespace GroovesharkAPI
             Albums
         }
 
+        public enum PopularType
+        {
+             Daily = 0,
+             Monthly = 1
+        }
+
         public class ArtistAutocomplete
         {
             public string Name { get; set; }
