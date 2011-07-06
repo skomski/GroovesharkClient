@@ -91,12 +91,24 @@ namespace GroovesharkDownloader
 
 		private void AudioInformationTimerTick(object sender, EventArgs e)
 		{
-            SeekBar.Maximum = Convert.ToInt32(AudioPlayer.Instance.TotalTime);
+            if (AudioPlayer.Instance.IsPlaying)
+            {
+                VolumeTrackBar.Value = (int)AudioPlayer.Instance.Volume*100;
+                SeekBar.Maximum = Convert.ToInt32(AudioPlayer.Instance.TotalTime);
 
-            if ((AudioPlayer.Instance.TotalTime - AudioPlayer.Instance.ElapsedTime) > 0 && AudioPlayer.Instance.ElapsedTime > 0)
-            SeekBar.Value = Convert.ToInt32(AudioPlayer.Instance.ElapsedTime);
+                if ((AudioPlayer.Instance.TotalTime - AudioPlayer.Instance.ElapsedTime) > 0 &&
+                    AudioPlayer.Instance.ElapsedTime > 0)
+                    SeekBar.Value = Convert.ToInt32(AudioPlayer.Instance.ElapsedTime);
 
-		    TimeLabel.Text = String.Format("{0:#0.00} {1:#0.00} {2:#0.00}", Utils.FixTimespan(AudioPlayer.Instance.ElapsedTime, "MMSS"), Utils.FixTimespan(AudioPlayer.Instance.TotalTime, "MMSS"), Utils.FixTimespan(AudioPlayer.Instance.RemainingTime, "MMSS"));
+                TimeLabel.Text = String.Format("{0:#0.00} {1:#0.00} {2:#0.00}",
+                                               Utils.FixTimespan(AudioPlayer.Instance.ElapsedTime, "MMSS"),
+                                               Utils.FixTimespan(AudioPlayer.Instance.TotalTime, "MMSS"),
+                                               Utils.FixTimespan(AudioPlayer.Instance.RemainingTime, "MMSS"));
+
+                NameLabel.Text = AudioPlayer.Instance.CurrentSong.Name;
+                ArtistLabel.Text = AudioPlayer.Instance.CurrentSong.ArtistName;
+                AlbumLabel.Text = AudioPlayer.Instance.CurrentSong.AlbumName;
+            }
 		}
 
         private void SeekBarScroll(object sender, EventArgs e)
@@ -112,6 +124,21 @@ namespace GroovesharkDownloader
         private void SeekBarLeave(object sender, EventArgs e)
         {
             _isSeekBarScrolled = false;
+        }
+
+        private void VolumeTrackBarScroll(object sender, EventArgs e)
+        {
+            AudioPlayer.Instance.Volume = (float)(VolumeTrackBar.Value/100.0);
+        }
+
+        private void NextButtonClick(object sender, EventArgs e)
+        {
+            AudioPlayer.Instance.PlayNextSong();
+        }
+
+        private void PreviousButtonClick(object sender, EventArgs e)
+        {
+            AudioPlayer.Instance.PlayPreviousSong();
         }
 	}
 }

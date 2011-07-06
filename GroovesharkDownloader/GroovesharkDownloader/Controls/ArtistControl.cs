@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using GroovesharkAPI.Types.Artists;
+using GroovesharkAPI.Types.Songs;
 
 namespace GroovesharkDownloader
 {
@@ -31,7 +32,12 @@ namespace GroovesharkDownloader
 
         private void BackgroundWorkerDoWork(object sender, DoWorkEventArgs e)
         {
-            songsControl.Fill(GroovesharkAPI.Client.Instance.GetArtistSongs(_artist.ArtistID, true));
+            e.Result = GroovesharkAPI.Client.Instance.GetArtistSongs(_artist.ArtistID, true);
+        }
+
+        private void BackgroundWorkerRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            songsControl.Fill(e.Result as Song[]);
         }
     }
 }

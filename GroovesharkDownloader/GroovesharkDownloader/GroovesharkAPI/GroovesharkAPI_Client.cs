@@ -340,6 +340,52 @@ namespace GroovesharkAPI
             return apiCall.DeserializedResponse.result.Playlists;
         }
 
+        public Artist GetArtistByID(string identifier)
+        {
+            if (IsConnected == false)
+                Connect();
+
+
+            var apiCall = new getArtistByID(this);
+
+            apiCall.DeserializedRequest.parameters.artistID = Convert.ToInt32(identifier);
+
+            apiCall.Call();
+
+            return apiCall.DeserializedResponse.result;
+        }
+
+        public Album GetAlbumByID(string identifier)
+        {
+            if (IsConnected == false)
+                Connect();
+
+
+            var apiCall = new getAlbumByID(this);
+
+            apiCall.DeserializedRequest.parameters.albumID = Convert.ToInt32(identifier);
+
+            apiCall.Call();
+
+            return apiCall.DeserializedResponse.result;
+        }
+
+        public PlaylistByID GetPlaylistByID(string identifier)
+        {
+            if (IsConnected == false)
+                Connect();
+
+
+            var apiCall = new getPlaylistByID(this);
+
+            apiCall.DeserializedRequest.parameters.playlistID = Convert.ToInt32(identifier);
+
+            apiCall.Call();
+
+            return apiCall.DeserializedResponse.result;
+        }
+
+
 	#endregion
 	}
 }

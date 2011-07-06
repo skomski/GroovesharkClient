@@ -105,7 +105,7 @@ namespace GroovesharkAPI
                 public double Rank { get; set; }
             }
 
-            internal class PlaylistByIDSong : Song
+            public class PlaylistByIDSong : Song
             {
                 public string AvgRating { get; set; }
                 public string IsVerified { get; set; }
@@ -149,7 +149,7 @@ namespace GroovesharkAPI
                 public string TSAdded { get; set; }
             }
 
-            internal class PlaylistByID : Playlist
+            public class PlaylistByID : Playlist
             {
                 public string UUID { get; set; }
                 public string TSAdded { get; set; }

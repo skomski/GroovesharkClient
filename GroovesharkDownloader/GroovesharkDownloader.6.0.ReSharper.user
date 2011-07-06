@@ -6,55 +6,55 @@
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:PlaylistControl.Designer.cs" caret="0" fromTop="0" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:UserPlaylistControl.Designer.cs" caret="73" fromTop="2" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:PlaylistControl.cs" caret="665" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.Designer.cs" caret="0" fromTop="0" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:QueueControl.cs" caret="751" fromTop="27" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="3114" fromTop="16" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.Designer.cs" caret="0" fromTop="0" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:UserPlaylistControl.cs" caret="1131" fromTop="12" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="1714" fromTop="39" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SearchControl.cs" caret="8656" fromTop="17" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SearchControl.Designer.cs" caret="0" fromTop="0" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="4086" fromTop="22" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Types.cs" caret="5508" fromTop="21" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.cs" caret="789" fromTop="24" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.Designer.cs" caret="0" fromTop="0" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="778" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.Designer.cs" caret="0" fromTop="0" />
       <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SettingsControl.cs" caret="1703" fromTop="32" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="9658" fromTop="63" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="6464" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.Designer.cs" caret="0" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="10104" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="3612" fromTop="15" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="853" fromTop="16" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.cs" caret="956" fromTop="19" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="3675" fromTop="10" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="2001" fromTop="25" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.Designer.cs" caret="0" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.Designer.cs" caret="0" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.Designer.cs" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Types.cs" caret="1778" fromTop="7" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="26871" fromTop="19" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="8525" fromTop="14" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="8921" fromTop="19" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="9454" fromTop="19" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="582" fromTop="18" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="810" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="362" fromTop="9" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="520" fromTop="16" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="778" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SearchControl.cs" caret="9641" fromTop="40" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SearchControl.cs" caret="9476" fromTop="34" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SearchControl.cs" caret="8816" fromTop="17" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SettingsControl.cs" caret="1703" fromTop="32" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="27777" fromTop="21" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="27798" fromTop="20" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="27842" fromTop="22" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="27358" fromTop="10" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Types.cs" caret="5641" fromTop="30" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Types.cs" caret="5573" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="27612" fromTop="19" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="9104" fromTop="16" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="9318" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI_Client.cs" caret="9418" fromTop="27" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:UserPlaylistControl.cs" caret="1131" fromTop="12" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="8733" fromTop="28" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="8582" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="8280" fromTop="15" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="10103" fromTop="23" />
-      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="6464" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="3690" fromTop="31" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="10775" fromTop="22" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="3793" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="6613" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="7793" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="8590" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="11471" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="13764" fromTop="10" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="4552" fromTop="8" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="4215" fromTop="25" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="2699" fromTop="14" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="1143" fromTop="28" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:GroovesharkAPI/f:GroovesharkAPI.cs" caret="18411" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="13796" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="9899" fromTop="18" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="10011" fromTop="22" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="9327" fromTop="20" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:AudioPlayer.cs" caret="3596" fromTop="15" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="6133" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="1028" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:AlbumControl.cs" caret="853" fromTop="16" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.cs" caret="6094" fromTop="20" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.cs" caret="1081" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:ArtistControl.cs" caret="956" fromTop="19" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="791" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="734" fromTop="26" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="1082" fromTop="34" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="1955" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="2089" fromTop="21" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/d:Controls/f:SongsControl.cs" caret="2001" fromTop="19" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -81,13 +81,13 @@
       <Item value="Client`0" priority="387" />
       <Item value="using" priority="61" />
       <Item value="GroovesharkAPI" priority="509" />
-      <Item value="if" priority="1439" />
+      <Item value="if" priority="1535" />
       <Item value="_isConnected" priority="63" />
       <Item value="Connect`0" priority="63" />
       <Item value="QueryTextBox" priority="63" />
       <Item value="String`0" priority="95" />
       <Item value="MessageBox`0" priority="127" />
-      <Item value="return" priority="351" />
+      <Item value="return" priority="383" />
       <Item value="TypeComboBox" priority="158" />
       <Item value="Types" priority="134" />
       <Item value="SearchPlaylist`0" priority="138" />
@@ -95,7 +95,7 @@
       <Item value="Type`0" priority="31" />
       <Item value="_currentSearchType" priority="95" />
       <Item value="string" priority="1083" />
-      <Item value="private" priority="543" />
+      <Item value="private" priority="575" />
       <Item value="enum" priority="62" />
       <Item value="foreach" priority="223" />
       <Item value="SearchType`0" priority="95" />
@@ -103,9 +103,9 @@
       <Item value="typeof" priority="31" />
       <Item value="switch" priority="31" />
       <Item value="Array`0" priority="64" />
-      <Item value="e" priority="415" />
+      <Item value="e" priority="447" />
       <Item value="_search" priority="63" />
-      <Item value="as" priority="287" />
+      <Item value="as" priority="351" />
       <Item value="ResultListView" priority="351" />
       <Item value="playlist" priority="543" />
       <Item value="new" priority="736" />
@@ -120,13 +120,13 @@
       <Item value="column" priority="31" />
       <Item value="ColumnHeader`0" priority="31" />
       <Item value="List" priority="95" />
-      <Item value="public" priority="606" />
-      <Item value="PlaylistControl`0" priority="31" />
+      <Item value="public" priority="670" />
+      <Item value="PlaylistControl`0" priority="64" />
       <Item value="Queue" priority="31" />
       <Item value="double" priority="31" />
-      <Item value="int" priority="255" />
+      <Item value="int" priority="287" />
       <Item value="long" priority="31" />
-      <Item value="_audioBuffer" priority="159" />
+      <Item value="_audioBuffer" priority="223" />
       <Item value="_lastPositionInBuffer" priority="191" />
       <Item value="BASS_FILEPROCS`0" priority="63" />
       <Item value="_fileprocs" priority="32" />
@@ -134,7 +134,7 @@
       <Item value="StreamReadCallback`0" priority="32" />
       <Item value="StreamSeekCallback`0" priority="32" />
       <Item value="BASSTimer`0" priority="31" />
-      <Item value="_audioStream" priority="799" />
+      <Item value="_audioStream" priority="831" />
       <Item value="ElapsedTime" priority="31" />
       <Item value="Path`0" priority="63" />
       <Item value="_mainCacheDirectory" priority="63" />
@@ -152,15 +152,15 @@
       <Item value="true" priority="287" />
       <Item value="false" priority="255" />
       <Item value="statusStrip" priority="63" />
-      <Item value="Songs" priority="816" />
-      <Item value="AudioPlayer`0" priority="63" />
+      <Item value="Songs" priority="880" />
+      <Item value="AudioPlayer`0" priority="191" />
       <Item value="Task`0" priority="63" />
       <Item value="Task" priority="28" />
       <Item value="play" priority="31" />
       <Item value="Exception`0" priority="32" />
       <Item value="BASS_ERROR_FORMAT" priority="33" />
       <Item value="BassException`0" priority="31" />
-      <Item value="Bass`0" priority="480" />
+      <Item value="Bass`0" priority="512" />
       <Item value="BASSError`0" priority="31" />
       <Item value="ErrorCode" priority="31" />
       <Item value="File`0" priority="63" />
@@ -170,14 +170,14 @@
       <Item value="Identifier" priority="128" />
       <Item value="protected" priority="63" />
       <Item value="_Identifier" priority="63" />
-      <Item value="PlaySong`0" priority="95" />
+      <Item value="PlaySong`0" priority="127" />
       <Item value="stream" priority="159" />
       <Item value="Timeout`0" priority="159" />
       <Item value="local" priority="63" />
       <Item value="new_stream" priority="63" />
       <Item value="finalStream" priority="64" />
       <Item value="MemoryStream" priority="57" />
-      <Item value="Length" priority="53" />
+      <Item value="Length" priority="80" />
       <Item value="TResponse`0" priority="32" />
       <Item value="Call`0" priority="31" />
       <Item value="bytesRead" priority="31" />
@@ -235,8 +235,8 @@
       <Item value="_playlist" priority="31" />
       <Item value="PlayListIDLabel" priority="31" />
       <Item value="PlayListName" priority="31" />
-      <Item value="songsControl" priority="63" />
-      <Item value="SongsListView" priority="31" />
+      <Item value="songsControl" priority="95" />
+      <Item value="SongsListView" priority="95" />
       <Item value="_songs" priority="31" />
       <Item value="playlistUserSong" priority="31" />
       <Item value="BASS_ACTIVE_STOPPED" priority="33" />
@@ -247,8 +247,8 @@
       <Item value="Debug`0" priority="159" />
       <Item value="UpdateTimerTick`0" priority="31" />
       <Item value="BASSStreamFilePosition`0" priority="31" />
-      <Item value="void" priority="95" />
-      <Item value="Song`0" priority="224" />
+      <Item value="void" priority="127" />
+      <Item value="Song`0" priority="256" />
       <Item value="throw" priority="63" />
       <Item value="#region" priority="63" />
       <Item value="#endregion" priority="31" />
@@ -291,7 +291,7 @@
       <Item value="artistGetSongsEx" priority="29" />
       <Item value="verifiedOrPopular" priority="31" />
       <Item value="ArtistControl`0" priority="31" />
-      <Item value="NameLabel" priority="31" />
+      <Item value="NameLabel" priority="63" />
       <Item value="_artist" priority="31" />
       <Item value="albumGetSongs`0" priority="31" />
       <Item value="AlbumSong`0" priority="31" />
@@ -305,6 +305,16 @@
       <Item value="userGetPlaylists" priority="29" />
       <Item value="CopyTo`0" priority="26" />
       <Item value="Concat`1" priority="26" />
+      <Item value="_currentStreamIdentifier" priority="31" />
+      <Item value="continue" priority="31" />
+      <Item value="_previousSong" priority="31" />
+      <Item value="TrackBar`0" priority="31" />
+      <Item value="VolumeTrackBar" priority="95" />
+      <Item value="BASSAttribute`0" priority="31" />
+      <Item value="float" priority="96" />
+      <Item value="value" priority="31" />
+      <Item value="temp" priority="31" />
+      <Item value="SongsControl`0" priority="32" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@GroovesharkAPI.Client">
       <Item value="Instance" priority="350" />
@@ -346,17 +356,19 @@
       <Item value="GetValues`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.ComponentModel.DoWorkEventArgs">
-      <Item value="Result" priority="80" />
+      <Item value="Result" priority="134" />
       <Item value="Argument" priority="80" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.ComponentModel.RunWorkerCompletedEventArgs">
-      <Item value="Result" priority="134" />
+      <Item value="Result" priority="188" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.ListView">
       <Item value="Clear`0" priority="26" />
       <Item value="Columns" priority="161" />
       <Item value="Items" priority="80" />
       <Item value="SelectedIndices" priority="53" />
+      <Item value="BeginUpdate`0" priority="26" />
+      <Item value="EndUpdate`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkAPI.Types.SearchPlaylist">
       <Item value="Name" priority="26" />
@@ -440,7 +452,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.Stream">
       <Item value="CopyTo`0" priority="53" />
-      <Item value="Close`0" priority="53" />
+      <Item value="Close`0" priority="80" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.StatusStrip">
       <Item value="Items" priority="53" />
@@ -457,12 +469,17 @@
       <Item value="Progress" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@GroovesharkDownloader.AudioPlayer">
-      <Item value="Instance" priority="53" />
+      <Item value="Instance" priority="188" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkDownloader.AudioPlayer">
       <Item value="PlaySong`0" priority="26" />
       <Item value="AddSongToQueue`0" priority="53" />
       <Item value="RemoveSongFromQueue`0" priority="26" />
+      <Item value="PlayNextSong`0" priority="26" />
+      <Item value="SetVolume`0" priority="26" />
+      <Item value="CurrentSong" priority="26" />
+      <Item value="IsPlaying" priority="27" />
+      <Item value="Volume" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Threading.Tasks.Task">
       <Item value="Start`0" priority="53" />
@@ -477,6 +494,8 @@
       <Item value="BASS_ChannelIsActive`0" priority="26" />
       <Item value="BASS_ChannelPlay`0" priority="26" />
       <Item value="BASS_StreamFree`0" priority="26" />
+      <Item value="BASS_SetVolume`0" priority="26" />
+      <Item value="BASS_ChannelSetAttribute`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkDownloader.BassException">
       <Item value="ErrorCode" priority="26" />
@@ -502,7 +521,7 @@
     <ItemStatistics item="Qualified:GroovesharkAPI.API.APICallDataReceivedEvent">
       <Item value="Identifier" priority="80" />
       <Item value="Length" priority="80" />
-      <Item value="Data" priority="26" />
+      <Item value="Data" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkAPI.API.APICall`2+Timeout">
       <Item value="ResetEvent" priority="26" />
@@ -573,7 +592,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Convert">
       <Item value="ToInt32`0" priority="80" />
-      <Item value="ToDouble`0" priority="107" />
+      <Item value="ToDouble`0" priority="134" />
       <Item value="ToInt64`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkAPI.API.Methods.playlistGetSongs+Response">
@@ -602,7 +621,7 @@
       <Item value="AutoSize" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.Label">
-      <Item value="Text" priority="80" />
+      <Item value="Text" priority="107" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkAPI.Types.PlaylistUserSong">
       <Item value="SongID" priority="26" />
@@ -610,9 +629,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkAPI.Types.Songs.Song">
       <Item value="Equals`0" priority="107" />
+      <Item value="ArtistName" priority="53" />
+      <Item value="Name" priority="26" />
+      <Item value="AlbumName" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
-      <Item value="Count" priority="377" />
+      <Item value="Count" priority="404" />
       <Item value="Remove`0" priority="26" />
       <Item value="Add`0" priority="134" />
       <Item value="RemoveAt`0" priority="161" />
@@ -621,7 +643,7 @@
       <Item value="Exists`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.TrackBar">
-      <Item value="Value" priority="80" />
+      <Item value="Value" priority="161" />
       <Item value="Maximum" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Forms.Timer">
@@ -679,7 +701,7 @@
       <Item value="ArtistID" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:GroovesharkDownloader.Controls.SongsControl">
-      <Item value="Fill`0" priority="26" />
+      <Item value="Fill`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@GroovesharkDownloader.SearchControl+SearchType">
       <Item value="Artists" priority="27" />
@@ -714,6 +736,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
       <Item value="ToArray`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Un4seen.Bass.BASSAttribute">
+      <Item value="BASS_ATTRIB_VOL" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Stream">
+      <Item value="Synchronized`0" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

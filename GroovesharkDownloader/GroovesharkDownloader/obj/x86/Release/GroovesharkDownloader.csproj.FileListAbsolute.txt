@@ -17,3 +17,22 @@ C:\Users\Skomski\Documents\Visual Studio 2010\Projects\GroovesharkDownloader\Gro
 C:\Users\Skomski\Documents\Visual Studio 2010\Projects\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.SongsControl.resources
 C:\Users\Skomski\Documents\Visual Studio 2010\Projects\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.UserPlaylistControl.resources
 C:\Users\Skomski\Documents\Visual Studio 2010\Projects\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.AlbumControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\bin\Release\GroovesharkDownloader.exe.config
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.exe
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.pdb
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\bin\Release\GroovesharkDownloader.exe
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\bin\Release\GroovesharkDownloader.pdb
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\bin\Release\Bass.Net.dll
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\bin\Release\Newtonsoft.Json.xml
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.AlbumControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.ArtistControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.PlaylistControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.SettingsControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Controls.SongsControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.MainWindow.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.UserPlaylistControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.Properties.Resources.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GroovesharkDownloader.SearchControl.resources
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\Skomski\Grooveshark\GroovesharkDownloader\GroovesharkDownloader\obj\x86\Release\GenerateResource.write.1.tlog

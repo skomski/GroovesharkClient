@@ -6,6 +6,8 @@ using GroovesharkAPI.Types;
 using GroovesharkAPI.ConnectionTypes;
 using System.IO;
 using System.Net;
+using GroovesharkAPI.Types.Albums;
+using GroovesharkAPI.Types.Artists;
 using GroovesharkAPI.Types.Playlists;
 using GroovesharkAPI.Types.Songs;
 using GroovesharkAPI.Types.Users;
@@ -211,7 +213,7 @@ namespace GroovesharkAPI
 
                 while (!_currentCancelToken.IsCancellationRequested && !_requestComplete)
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(200);
                 }
             }
 
@@ -696,6 +698,42 @@ namespace GroovesharkAPI
                 }
 
                 public getPlaylistByID(Client client)
+                    : base(client)
+                {
+                }
+            }
+
+            internal class getArtistByID : APICall<getArtistByID.Request, Artist>
+            {
+                internal class Request
+                {
+                    public int artistID { get; set; }
+                }
+
+                protected override string GetName()
+                {
+                    return "getArtistByID";
+                }
+
+                public getArtistByID(Client client)
+                    : base(client)
+                {
+                }
+            }
+
+            internal class getAlbumByID : APICall<getAlbumByID.Request, Album>
+            {
+                internal class Request
+                {
+                    public int albumID { get; set; }
+                }
+
+                protected override string GetName()
+                {
+                    return "getAlbumByID";
+                }
+
+                public getAlbumByID(Client client)
                     : base(client)
                 {
                 }

@@ -39,6 +39,8 @@
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddSongToQueueMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeSongFromQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openArtistTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openAlbumTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,15 +94,17 @@
             // 
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddSongToQueueMenuItem,
-            this.removeSongFromQueueToolStripMenuItem});
+            this.removeSongFromQueueToolStripMenuItem,
+            this.openArtistTabToolStripMenuItem,
+            this.openAlbumTabToolStripMenuItem});
             this.contextMenu.Name = "ContextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(208, 70);
+            this.contextMenu.Size = new System.Drawing.Size(208, 114);
             this.contextMenu.Text = "Options";
             // 
             // AddSongToQueueMenuItem
             // 
             this.AddSongToQueueMenuItem.Name = "AddSongToQueueMenuItem";
-            this.AddSongToQueueMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.AddSongToQueueMenuItem.Size = new System.Drawing.Size(207, 22);
             this.AddSongToQueueMenuItem.Text = "Add song to queue";
             this.AddSongToQueueMenuItem.Click += new System.EventHandler(this.AddSongToQueueMenuItemClick);
             // 
@@ -110,6 +114,20 @@
             this.removeSongFromQueueToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.removeSongFromQueueToolStripMenuItem.Text = "Remove song from queue";
             this.removeSongFromQueueToolStripMenuItem.Click += new System.EventHandler(this.RemoveSongFromQueueToolStripMenuItemClick);
+            // 
+            // openArtistTabToolStripMenuItem
+            // 
+            this.openArtistTabToolStripMenuItem.Name = "openArtistTabToolStripMenuItem";
+            this.openArtistTabToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.openArtistTabToolStripMenuItem.Text = "Open artist tab";
+            this.openArtistTabToolStripMenuItem.Click += new System.EventHandler(this.OpenArtistTabToolStripMenuItemClick);
+            // 
+            // openAlbumTabToolStripMenuItem
+            // 
+            this.openAlbumTabToolStripMenuItem.Name = "openAlbumTabToolStripMenuItem";
+            this.openAlbumTabToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.openAlbumTabToolStripMenuItem.Text = "Open album tab";
+            this.openAlbumTabToolStripMenuItem.Click += new System.EventHandler(this.OpenAlbumTabToolStripMenuItemClick);
             // 
             // SongsControl
             // 
@@ -135,5 +153,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem AddSongToQueueMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeSongFromQueueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openArtistTabToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openAlbumTabToolStripMenuItem;
     }
 }
