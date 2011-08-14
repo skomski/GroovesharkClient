@@ -1,0 +1,12 @@
+C# GroovesharkAPI and Player
+Alpha only with Contracts without any Tests... Expect nothing!
+
+Grooveshark often updates revTokens for their different clients.
+Then you need to decompile the JSQueue SWF and you need to look at the JavaScript source to get the new tokens.
+
+Example:
+
+    Client.Instance.Connect();
+	string songID = Client.Instance.Search<SearchSong>("eminem")[0].SongID;
+	AudioStreamInfo information = Client.Instance.GetAudioStreamInformation(songID);
+	Stream audioStream = Client.Instance.GetAudioStream(information);
