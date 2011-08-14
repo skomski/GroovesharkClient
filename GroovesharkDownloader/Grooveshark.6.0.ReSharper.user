@@ -1,0 +1,429 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="F16018F5-373F-4B5A-B7BF-084DDAAEB74D/f:Helper.cs" caret="1796" fromTop="28" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Types.cs" caret="340" fromTop="0" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:GroovesharkException.cs" caret="13" fromTop="0" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="588" fromTop="12" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="924" fromTop="14" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="384" fromTop="18" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="24607" fromTop="26" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="25184" fromTop="24" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="25701" fromTop="30" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="26206" fromTop="21" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="27487" fromTop="18" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="30011" fromTop="27" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="29233" fromTop="19" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="28437" fromTop="13" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="4353" fromTop="13" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="4776" fromTop="15" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="6549" fromTop="22" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="6942" fromTop="23" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="7230" fromTop="25" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="7528" fromTop="27" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="8917" fromTop="37" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="4897" fromTop="29" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="4982" fromTop="27" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="5069" fromTop="31" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="5155" fromTop="35" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="5237" fromTop="39" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="2806" fromTop="23" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Client.cs" caret="3997" fromTop="14" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="1556" fromTop="9" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="7267" fromTop="18" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="8832" fromTop="15" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:GroovesharkException.cs" caret="13" fromTop="0" />
+      <File id="283FDBD9-08CE-481F-920F-8BF01DA938CF/f:Core.cs" caret="13" fromTop="0" />
+      <File id="0C5C1EB4-DAFF-48A9-9D49-76425EE69302/f:MainWindow.cs" caret="384" fromTop="18" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="APICall&lt;TRequest,TResponse&gt;.HtmlSharkClient" priority="57" />
+      <Item value="private" priority="191" />
+      <Item value="readonly" priority="31" />
+      <Item value="string" priority="286" />
+      <Item value="_name" priority="63" />
+      <Item value="name" priority="95" />
+      <Item value="bool" priority="95" />
+      <Item value="false" priority="159" />
+      <Item value="_useHttps" priority="63" />
+      <Item value="secureConnection" priority="63" />
+      <Item value="public" priority="63" />
+      <Item value="protected" priority="31" />
+      <Item value="return" priority="191" />
+      <Item value="_deserializedRequest" priority="95" />
+      <Item value="Country`0" priority="31" />
+      <Item value="add" priority="32" />
+      <Item value="remove" priority="32" />
+      <Item value="enum" priority="31" />
+      <Item value="ClientInfo`0" priority="63" />
+      <Item value="clientInfo" priority="64" />
+      <Item value="HtmlShark" priority="33" />
+      <Item value="_clientInfo" priority="63" />
+      <Item value="new" priority="223" />
+      <Item value="APICall&lt;TRequest,TResponse&gt;.JSQueueClient" priority="28" />
+      <Item value="Parameters" priority="31" />
+      <Item value="typeof" priority="95" />
+      <Item value="this" priority="159" />
+      <Item value="artistGetSongsEx`0" priority="31" />
+      <Item value="getAlbumByID`0" priority="31" />
+      <Item value="response" priority="63" />
+      <Item value="GroovesharkException" priority="29" />
+      <Item value="FaultCode`0" priority="31" />
+      <Item value="interface" priority="30" />
+      <Item value="IClient`0" priority="31" />
+      <Item value="Contract`0" priority="1215" />
+      <Item value="UUID" priority="31" />
+      <Item value="null" priority="159" />
+      <Item value="SessionID" priority="63" />
+      <Item value="SecretKey" priority="31" />
+      <Item value="Country" priority="63" />
+      <Item value="try" priority="95" />
+      <Item value="throw" priority="63" />
+      <Item value="apiCall" priority="31" />
+      <Item value="IsConnected" priority="95" />
+      <Item value="DateTime`0" priority="127" />
+      <Item value="tokenDate" priority="63" />
+      <Item value="if" priority="383" />
+      <Item value="void" priority="95" />
+      <Item value="ref" priority="31" />
+      <Item value="APICall" priority="63" />
+      <Item value="ContractPublicPropertyNameAttribute`0" priority="63" />
+      <Item value="RegisterEvents`0" priority="31" />
+      <Item value="audioCall" priority="31" />
+      <Item value="IAPICall`0" priority="31" />
+      <Item value="bytesRead" priority="95" />
+      <Item value="var" priority="31" />
+      <Item value="lastBytesRead" priority="31" />
+      <Item value="int" priority="94" />
+      <Item value="_bufferLength" priority="95" />
+      <Item value="buffer" priority="191" />
+      <Item value="Length" priority="53" />
+      <Item value="while" priority="31" />
+      <Item value="Thread`0" priority="479" />
+      <Item value="_currentStreamLength" priority="159" />
+      <Item value="_lastPositionInBuffer" priority="63" />
+      <Item value="_audioBuffer" priority="351" />
+      <Item value="SeekOrigin`0" priority="31" />
+      <Item value="Name" priority="65" />
+      <Item value="Debug`0" priority="159" />
+      <Item value="_isNetworkStream" priority="31" />
+      <Item value="_audioStream" priority="31" />
+      <Item value="FillPlayBuffer`0" priority="32" />
+      <Item value="_cancelToken" priority="63" />
+      <Item value="exception" priority="129" />
+      <Item value="Task`0" priority="95" />
+      <Item value="OnRaiseProgressEvent`0" priority="31" />
+      <Item value="_progressEvent" priority="127" />
+      <Item value="Bass`0" priority="160" />
+      <Item value="BassException`0" priority="63" />
+      <Item value="ErrorCode" priority="31" />
+      <Item value="BASSFlag`0" priority="63" />
+      <Item value="_pinnedArray" priority="159" />
+      <Item value="byte" priority="60" />
+      <Item value="_audioData" priority="63" />
+      <Item value="SetValue`0" priority="26" />
+      <Item value="IsPlaying" priority="63" />
+      <Item value="using" priority="31" />
+      <Item value="Songs" priority="703" />
+      <Item value="PlayNextSong`0" priority="31" />
+      <Item value="dataReceived" priority="63" />
+      <Item value="e" priority="191" />
+      <Item value="MessageBox`0" priority="31" />
+      <Item value="break" priority="31" />
+      <Item value="Exception" priority="30" />
+      <Item value="Exception`0" priority="31" />
+      <Item value="base" priority="63" />
+      <Item value="message" priority="31" />
+      <Item value="inner" priority="127" />
+      <Item value="Serializable" priority="31" />
+      <Item value="String`0" priority="63" />
+      <Item value="stream" priority="31" />
+      <Item value="finally" priority="63" />
+      <Item value="NewsStyleUriParser`0" priority="63" />
+      <Item value="EventArgs`0" priority="127" />
+      <Item value="IEnumerable" priority="31" />
+      <Item value="songs" priority="31" />
+      <Item value="_sessionID" priority="31" />
+      <Item value="_country" priority="31" />
+      <Item value="_uuid" priority="31" />
+      <Item value="#region" priority="95" />
+      <Item value="#endregion" priority="95" />
+      <Item value="data" priority="31" />
+      <Item value="BeginInvoke`0" priority="31" />
+      <Item value="Action`0" priority="32" />
+      <Item value="ProgressEvent" priority="95" />
+      <Item value="ThreadStaticAttribute`0" priority="30" />
+      <Item value="where" priority="31" />
+      <Item value="T`0" priority="93" />
+      <Item value="sender" priority="31" />
+      <Item value="CompletedEvent" priority="60" />
+      <Item value="AppDomain`0" priority="31" />
+      <Item value="songsControl" priority="127" />
+      <Item value="AudioPlayer`0" priority="159" />
+      <Item value="CacheVirtualItemsEventArgs`0" priority="31" />
+      <Item value="SongsListView" priority="159" />
+      <Item value="song" priority="160" />
+      <Item value="Color`0" priority="63" />
+      <Item value="switch" priority="63" />
+      <Item value="foreach" priority="63" />
+      <Item value="Song`0" priority="31" />
+      <Item value="AddItem`0" priority="63" />
+      <Item value="item" priority="31" />
+      <Item value="ListView`0" priority="31" />
+      <Item value="else" priority="63" />
+      <Item value="_songs" priority="127" />
+      <Item value="List&lt;Song&gt;" priority="28" />
+      <Item value="SortItems" priority="31" />
+      <Item value="SongsListViewColumnClick`0" priority="32" />
+      <Item value="CurrentSong" priority="191" />
+      <Item value="client" priority="31" />
+      <Item value="sessionID" priority="31" />
+      <Item value="token" priority="63" />
+      <Item value="uuid" priority="31" />
+      <Item value="method" priority="31" />
+      <Item value="IAsyncResult`0" priority="63" />
+      <Item value="_WebRequest" priority="63" />
+      <Item value="songID" priority="95" />
+      <Item value="country" priority="95" />
+      <Item value="playlistID" priority="95" />
+      <Item value="userID" priority="63" />
+      <Item value="ofWhat" priority="31" />
+      <Item value="query" priority="63" />
+      <Item value="type" priority="31" />
+      <Item value="secretKey" priority="31" />
+      <Item value="ip" priority="31" />
+      <Item value="streamkey" priority="31" />
+      <Item value="artistID" priority="95" />
+      <Item value="Album`0" priority="31" />
+      <Item value="albumID" priority="95" />
+      <Item value="username" priority="63" />
+      <Item value="password" priority="63" />
+      <Item value="User`0" priority="31" />
+      <Item value="search" priority="31" />
+      <Item value="identifier" priority="31" />
+      <Item value="CancellationToken" priority="28" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.APIRequest`1">
+      <Item value="parameters" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.Methods.getStreamKeyFromSongIDEx">
+      <Item value="GetType`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="ToString`0" priority="26" />
+      <Item value="Name" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@GroovesharkAPI.API.APICall`2+ClientInfo">
+      <Item value="JSQueue" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.Methods.getFavorites`1">
+      <Item value="GetType`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.IClientInfo">
+      <Item value="StaticRandomizer" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.HttpWebResponse">
+      <Item value="ContentLength" priority="26" />
+      <Item value="Close`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@GroovesharkAPI.ConnectionTypes.FaultCode">
+      <Item value="ParseError" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Contracts.Contract">
+      <Item value="Ensures`0" priority="135" />
+      <Item value="Requires`0" priority="863" />
+      <Item value="Result`1" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.Methods.getSearchResultsEx`1">
+      <Item value="Call`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.Methods.getSearchResultsEx`1+Response">
+      <Item value="result" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="CompareTo`0" priority="26" />
+      <Item value="Subtract`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.TimeSpan">
+      <Item value="TotalMinutes" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread">
+      <Item value="Sleep`0" priority="296" />
+      <Item value="CurrentThread" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Un4seen.Bass.BASSStreamSystem">
+      <Item value="STREAMFILE_BUFFER" priority="26" />
+      <Item value="STREAMFILE_NOBUFFER" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Length" priority="53" />
+      <Item value="Seek`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.SeekOrigin">
+      <Item value="End" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Name" priority="107" />
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debug">
+      <Item value="Write`0" priority="26" />
+      <Item value="WriteLine`0" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Tasks.Task">
+      <Item value="Factory" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Tasks.TaskFactory">
+      <Item value="StartNew`0" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.CancellationTokenSource">
+      <Item value="IsCancellationRequested" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.ProgressChangedEvent">
+      <Item value="Progress" priority="53" />
+      <Item value="TotalBytes" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Un4seen.Bass.Bass">
+      <Item value="BASS_ErrorGetCode`0" priority="108" />
+      <Item value="BASS_StreamCreateURL`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Un4seen.Bass.BASSFlag">
+      <Item value="BASS_DEFAULT" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.MemoryStream">
+      <Item value="GetBuffer`0" priority="53" />
+      <Item value="Length" priority="53" />
+      <Item value="Capacity" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.InteropServices.GCHandle">
+      <Item value="Target" priority="26" />
+      <Item value="AddrOfPinnedObject`0" priority="26" />
+      <Item value="Free`0" priority="26" />
+      <Item value="IsAllocated" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Count" priority="53" />
+      <Item value="Exists`0" priority="26" />
+      <Item value="Contains`0" priority="26" />
+      <Item value="Equals`0" priority="26" />
+      <Item value="AddRange`0" priority="26" />
+      <Item value="Add`0" priority="26" />
+      <Item value="Remove`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.API.DataReceived">
+      <Item value="BeginInvoke`0" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.ThreadPool">
+      <Item value="QueueUserWorkItem`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkPlayer.BassException">
+      <Item value="ErrorCode" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Un4seen.Bass.BASSError">
+      <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
+      <Item value="IsNullOrWhiteSpace`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.EventHandler`1">
+      <Item value="Raise`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkPlayer.Properties.Settings">
+      <Item value="Username" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.AppDomain">
+      <Item value="CreateDomain`0" priority="26" />
+      <Item value="CurrentDomain" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.AppDomain">
+      <Item value="ProcessExit" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@GroovesharkPlayer.AudioPlayer">
+      <Item value="Instance" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkPlayer.AudioPlayer">
+      <Item value="CurrentSong" priority="80" />
+      <Item value="Songs" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListView">
+      <Item value="Items" priority="134" />
+      <Item value="ColumnClick" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListView+ListViewItemCollection">
+      <Item value="Find`0" priority="26" />
+      <Item value="Add`0" priority="26" />
+      <Item value="RemoveByKey`0" priority="26" />
+      <Item value="AsQueryable`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkAPI.Types.Songs.Song">
+      <Item value="SongID" priority="108" />
+      <Item value="Equals`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListViewItem">
+      <Item value="BackColor" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Drawing.Color">
+      <Item value="Gold" priority="26" />
+      <Item value="White" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ObjectModel.ObservableCollection`1">
+      <Item value="CollectionChanged" priority="53" />
+      <Item value="Move`0" priority="107" />
+      <Item value="IndexOf`0" priority="161" />
+      <Item value="Count" priority="80" />
+      <Item value="Contains`0" priority="53" />
+      <Item value="Remove`0" priority="26" />
+      <Item value="RemoveAt`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Specialized.NotifyCollectionChangedEventArgs">
+      <Item value="Action" priority="53" />
+      <Item value="NewItems" priority="53" />
+      <Item value="OldItems" priority="81" />
+      <Item value="OldStartingIndex" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GroovesharkPlayer.Controls.SongsControl">
+      <Item value="Remove`0" priority="26" />
+      <Item value="AddRange`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="NotEmpty`0" priority="809" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.HttpWebRequest">
+      <Item value="GetRequestStream`0" priority="26" />
+      <Item value="ContentLength" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>
